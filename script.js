@@ -381,6 +381,8 @@ function addToEnquiry(productName) {
 function addEnquiryList() {
     const enquiryList = document.getElementById("enquiryList");
     const enquiryCount = document.getElementById("enquiryCount");
+    const emptyEnquiry = document.getElementById("emptyEnquiry");
+    emptyEnquiry.style.display = enquiryProducts.length === 0 ? "block" : "none";
 
     enquiryList.innerHTML = "";
 
