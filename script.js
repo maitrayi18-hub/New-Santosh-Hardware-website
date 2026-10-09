@@ -1,7 +1,5 @@
-// ================================
-// HERO IMAGE CAROUSEL
-// ================================
 
+// HERO IMAGE CAROUSEL
 let currentSlide = 0;
 let carouselTimer;
 
@@ -53,11 +51,7 @@ function restartCarousel() {
 showSlide(0);
 startCarousel();
 
-// ================================
 // PRODUCT DATABASE
-// ================================
-
-
 
 const products = [
 
@@ -258,10 +252,7 @@ const products = [
     }
 ];
 
-
-// ================================
 // DISPLAY PRODUCTS
-// ================================
 
 function displayProducts(productList) {
 
@@ -325,10 +316,7 @@ function displayProducts(productList) {
     });
 }
 
-
-// ================================
 // SEARCH PRODUCTS
-// ================================
 
 function searchProducts() {
 
@@ -357,19 +345,106 @@ function searchProducts() {
 
     displayProducts(filteredProducts);
 }
-
-
-// ================================
 // CATEGORY FILTER
-// ================================
 
 function filterProducts() {
     searchProducts();
 }
 
-
-// ================================
 // INITIAL DISPLAY
-// ================================
 
 displayProducts(products);
+
+
+function getQuote(productName) {
+    const message = `Hi, I would like to get a quote for ${productName}.`;
+    const url = `https://wa.me/919334298027?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+}
+
+
+
+let enquiryProducts = [];
+
+function addToEnquiry(productName) {
+    if (enquiryProducts.includes(productName)) {
+        alert(productName + " is already in your enquiry!");
+        return;
+    }
+
+    enquiryProducts.push(productName);
+    addEnquiryList();
+
+    alert(productName + " added to your enquiry!");
+}
+
+function addEnquiryList() {
+    const enquiryList = document.getElementById("enquiryList");
+    const enquiryCount = document.getElementById("enquiryCount");
+
+    enquiryList.innerHTML = "";
+
+    if (enquiryProducts.length === 0) {
+        const emptyMessage = document.createElement("p");
+        emptyMessage.className = "empty-enquiry";
+        emptyMessage.textContent = "Your enquiry is empty.";
+        enquiryList.appendChild(emptyMessage);
+    }
+
+    enquiryProducts.forEach(function(product) {
+        const item = document.createElement("div");
+        item.className = "enquiry-item";
+
+        const name = document.createElement("span");
+        name.textContent = product;
+
+        const cross = document.createElement("button");
+        cross.textContent = "×";
+        cross.type = "button";
+        cross.className = "remove-enquiry";
+        cross.setAttribute("aria-label", "Remove " + product);
+
+        cross.onclick = function() {
+            enquiryProducts = enquiryProducts.filter(function(p) {
+                return p !== product;
+            });
+
+            addEnquiryList();
+        };
+
+        item.appendChild(name);
+        item.appendChild(cross);
+        enquiryList.appendChild(item);
+    });
+
+    if (enquiryCount) {
+        enquiryCount.textContent = enquiryProducts.length;
+    }
+}
+
+function sendEnquiry() {
+    if (enquiryProducts.length === 0) {
+        alert("Please add at least one product first.");
+        return;
+    }
+
+    const message =
+        "Hi New Santosh Hardware! I would like to enquire about:\n\n" +
+        enquiryProducts.map(function(product) {
+            return "- " + product;
+        }).join("\n") +
+        "\n\nPlease share the prices and availability.";
+
+    const url =
+        "https://wa.me/919334298027?text=" +
+        encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
+
+
+
+
+
+
+

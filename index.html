@@ -269,62 +269,76 @@
 
         <!-- ================= PRODUCTS ================= -->
 
-        <section id="products" class="section products-section">
-
-            <div class="section-heading">
-
-                <span class="eyebrow">OUR PRODUCTS</span>
-
-                <h2>Find What You Need</h2>
-
-                <p>
-                    Search our products or browse by category.
-                    Add products to your enquiry and send it to us on WhatsApp.
-                </p>
-
-            </div>
+        
 
 
-            <!-- SEARCH -->
+                  
+<section id="products" class="section products-section">
 
-            <div class="product-tools">
+    <div class="section-heading">
+        <span class="eyebrow">OUR PRODUCTS</span>
+        <h2>Find What You Need</h2>
 
-                <div class="search-box">
-                    <span>🔍</span>
+        <p>
+            Search our products or browse by category.
+            Add products to your enquiry and send it to us on WhatsApp.
+        </p>
+    </div>
 
-                    <input
-                        type="text"
-                        id="productSearch"
-                        placeholder="Search products e.g. PVC pipes..."
-                        oninput="searchProducts()"
-                    >
-                </div>
+    <div class="product-tools">
+        <div class="search-box">
+            <span>🔍</span>
+            <input
+                type="text"
+                id="productSearch"
+                placeholder="Search products e.g. PVC pipes..."
+                oninput="searchProducts()"
+            >
+        </div>
 
-                <select id="categoryFilter"
-                        onchange="filterProducts()">
+        <select id="categoryFilter" onchange="filterProducts()">
+            <option value="All">All Categories</option>
+            <option value="Hardware">Hardware</option>
+            <option value="Paint & Painting">Paint & Painting</option>
+            <option value="Plumbing">Plumbing</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Tools">Tools</option>
+        </select>
+    </div>
 
-                    <option value="All">All Categories</option>
-                    <option value="Hardware">Hardware</option>
-                    <option value="Paint & Painting">Paint & Painting</option>
-                    <option value="Plumbing">Plumbing</option>
-                    <option value="Electrical">Electrical</option>
-                    <option value="Tools">Tools</option>
+    <div id="productGrid" class="product-grid"></div>
 
-                </select>
+    <p id="noProducts" class="no-products">
+        No products found.
+    </p>
 
-            </div>
+  <div id="productGrid" class="product-grid"></div>
+
+<p id="noProducts" class="no-products">
+    No products found.
+</p>
+
+</section>
+
+<section id="enquirySection" class="enquiry-section">
+    <h2>Your Enquiry</h2>
+    <p id="emptyEnquiry">No products added yet.</p>
+
+    <ul id="enquiryList"></ul>
+
+    <button onclick="sendEnquiry()" id="sendEnquiryBtn">
+        Send Enquiry on WhatsApp
+    </button>
+</section>
 
 
-            <!-- PRODUCT LIST -->
 
-            <div id="productGrid" class="product-grid"></div>
 
-            <p id="noProducts" class="no-products">
-                No products found.
-            </p>
 
-        </section>
+                
+               
 
+         
 
         <!-- ================= ENQUIRY ================= -->
 
