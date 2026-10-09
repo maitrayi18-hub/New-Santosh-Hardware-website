@@ -443,6 +443,71 @@ function sendEnquiry() {
 }
 
 
+/* PINCODE CHECKER — NEW SANTOSH HARDWARE */
+
+const patnaDistrictPincodes = new Set([
+    "800001", "800002", "800003", "800004", "800005",
+    "800006", "800007", "800008", "800009", "800010",
+    "800011", "800012", "800013", "800014", "800015",
+    "800016", "800017", "800019", "800020", "800021",
+    "800022", "800023", "800024", "800025", "800026",
+    "800027", "800028", "800030", "800031", "800032",
+    "800034", "800035",
+    "801102", "801103", "801104", "801105", "801106",
+    "801107", "801108", "801109", "801110", "801111",
+    "801112", "801113", "801302", "801304", "801305",
+    "801503", "801505", "801506", "801507",
+    "802160",
+    "803110", "803201", "803202", "803203", "803211",
+    "803212", "803213", "803214", "803215", "803221",
+    "803301", "803302", "803303", "803306", "803307",
+    "804451", "804452", "804453"
+]);
+
+function checkPincode() {
+    const pincodeInput = document.getElementById("pincode");
+    const result = document.getElementById("pincodeResult");
+    const pincode = pincodeInput.value.trim();
+
+    if (!/^\d{6}$/.test(pincode)) {
+        result.textContent = "Please enter a valid 6-digit PIN code.";
+        return;
+    }
+
+    let message;
+
+    if (patnaDistrictPincodes.has(pincode)) {
+        message =
+            "Delivery is available for this Patna district PIN code! " +
+            "Contact us on WhatsApp to confirm delivery details.";
+    } else {
+        message =
+            "We couldn't verify this PIN code in our Patna district list. " +
+            "Contact us on WhatsApp to confirm delivery.";
+    }
+
+    result.replaceChildren();
+
+    const messageText = document.createElement("span");
+    messageText.textContent = message;
+
+    const whatsappLink = document.createElement("a");
+    whatsappLink.href =
+        "https://wa.me/919334298027?text=" +
+        encodeURIComponent(
+            "Hi New Santosh Hardware! Please confirm delivery availability " +
+            "for PIN code " + pincode + "."
+        );
+    whatsappLink.target = "_blank";
+    whatsappLink.rel = "noopener noreferrer";
+    whatsappLink.textContent = "Confirm on WhatsApp";
+
+    result.append(messageText, document.createElement("br"), whatsappLink);
+}
+
+
+
+
 
 
 
