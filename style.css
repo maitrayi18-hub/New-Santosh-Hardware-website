@@ -1,12 +1,4 @@
-/* =========================================================
-   NEW SANTOSH HARDWARE
-   MAIN WEBSITE STYLES
-   ========================================================= */
 
-
-/* =========================
-   RESET
-   ========================= */
 
 * {
     margin: 0;
@@ -1165,7 +1157,6 @@ footer {
 
 }
 
-
 /* =========================
    SMALL MOBILE
    ========================= */
@@ -1224,7 +1215,6 @@ footer {
 /* ================================
    HERO IMAGE CAROUSEL
 ================================ */
-
 .image-carousel {
     position: relative;
     width: 100%;
@@ -1265,7 +1255,6 @@ footer {
 }
 
 /* Arrows */
-
 .carousel-arrow {
     position: absolute;
     top: 50%;
@@ -1304,7 +1293,6 @@ footer {
 }
 
 /* Dots */
-
 .carousel-dots {
     position: absolute;
     bottom: 15px;
@@ -1336,7 +1324,6 @@ footer {
     background: white;
 }
 
-
 /* Mobile */
 
 @media (max-width: 768px) {
@@ -1360,7 +1347,6 @@ footer {
         right: 10px;
     }
 }
-
 
 /* product search and category controls */
 .product-tools .search-box {

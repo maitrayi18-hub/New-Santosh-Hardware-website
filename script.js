@@ -1,4 +1,3 @@
-
 // HERO IMAGE CAROUSEL
 let currentSlide = 0;
 let carouselTimer;
@@ -166,45 +165,7 @@ const products = [
         name: "Sealants",
         category: "Plumbing",
         keywords: "sealant sealants adhesive",
-        image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=800&q=80"
-    },
-
-    // ELECTRICAL
-    {
-        name: "Wires & Cables",
-        category: "Electrical",
-        keywords: "wire wires cable cables electrical",
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-        name: "Switches",
-        category: "Electrical",
-        keywords: "switch switches electrical",
-        image: "https://buildafricasa.co.za/wp-content/uploads/2026/02/Switches.jpg.jpeg"
-    },
-    {
-        name: "Sockets",
-        category: "Electrical",
-        keywords: "socket sockets plug electrical wall outlet",
-        image: "https://img.lazcdn.com/g/p/8e55d6cc443f2ae76104b836300bf983.png_720x720q80.png"
-    },
-    {
-        name: "MCBs",
-        category: "Electrical",
-        keywords: "mcb mcbs circuit breaker electrical",
-        image: "https://steelhardware.com.mv/v2/wp-content/uploads/2025/11/19678.png"
-    },
-    {
-        name: "LED Bulbs",
-        category: "Electrical",
-        keywords: "led bulb bulbs light",
-        image: "https://tse1.mm.bing.net/th/id/OIP.AtuzXBxHiLFbRMhIQJzXiAHaHa?r=0&pid=Api&h=220&P=0"
-    },
-    {
-        name: "Electrical Holders",
-        category: "Electrical",
-        keywords: "holder holders bulb electrical",
-        image: "https://www.ledsockets.com/wp-content/uploads/2022/05/james-products-scaled.jpg.webp"
+        image:"https://hitta.vn/wp-content/uploads/2025/06/so-sanh-silicone-va-sealant-khac.png"
     },
 
     // TOOLS
@@ -358,7 +319,7 @@ displayProducts(products);
 
 function getQuote(productName) {
     const message = `Hi, I would like to get a quote for ${productName}.`;
-    const url = `https://wa.me/919334298027?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/918210211683?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
 }
 
@@ -438,7 +399,7 @@ function sendEnquiry() {
         "\n\nPlease share the prices and availability.";
 
     const url =
-        "https://wa.me/919334298027?text=" +
+        "https://wa.me/918210211683?text=" +
         encodeURIComponent(message);
 
     window.open(url, "_blank");
@@ -495,7 +456,7 @@ function checkPincode() {
 
     const whatsappLink = document.createElement("a");
     whatsappLink.href =
-        "https://wa.me/919334298027?text=" +
+        "https://wa.me/918210211683?text=" +
         encodeURIComponent(
             "Hi New Santosh Hardware! Please confirm delivery availability " +
             "for PIN code " + pincode + "."
